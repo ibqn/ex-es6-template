@@ -2,6 +2,7 @@
   "name": "ex-es6-template",
   "version": "0.0.0",
   "private": true,
+  "repository": "ibqn/ex-es6-template",
   "main": "dist/index.js",
   "scripts": {
     "lint": "eslint src",
@@ -9,7 +10,7 @@
     "start": "gulp",
     "nodemon": "nodemon --watch src --exec \"babel-node src\"",
     "build": "babel src --copy-files --out-dir dist",
-    "serve": "concurrently --names \"babel,bs\" --prefix-colors \"bgBlue.bold,bgMagenta.bold\" \"node dist\" lite-server"
+    "serve": "node dist"
   },
   "dependencies": {
     "body-parser": "^1.18.2",
@@ -25,13 +26,11 @@
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.6.1",
-    "concurrently": "^3.5.1",
     "eslint": "^4.12.1",
     "gulp": "^3.9.1",
     "gulp-babel": "^7.0.0",
     "gulp-nodemon": "^2.2.1",
     "http-proxy-middleware": "^0.17.4",
-    "lite-server": "^2.3.0",
     "nodemon": "^1.12.1"
   }
 }

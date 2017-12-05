@@ -1,4 +1,5 @@
 'use strict'
+
 const gulp = require('gulp')
 const browserSync = require('browser-sync').create()
 const reload = browserSync.reload
@@ -19,7 +20,7 @@ gulp.task('nodemon', ['compile'], function (cb) {
   const stream = nodemon({
     watch: './src',
     script: './dist',
-    ext: 'sass pug',
+    ext: 'js sass pug',
     tasks: ['compile'],
     env: {
       'NODE_ENV': 'development',
@@ -57,9 +58,12 @@ gulp.task('compile', ['copy'], function () {
 
 
 gulp.task('copy', () => {
-  return gulp
-    .src('./src/**/*')
-    .pipe(gulp.dest('./dist'))
+  return gulp.src([
+    './src/**/*.pug',
+    './src/**/*.sass',
+    './src/**/*.ico'
+  ])
+  .pipe(gulp.dest('./dist'))
 })
 
 
