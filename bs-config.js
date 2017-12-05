@@ -1,6 +1,5 @@
 'use strict';
-var fallback = require('connect-history-api-fallback');
-var log = require('connect-logger');
+//var log = require('connect-logger');
 var proxy = require('http-proxy-middleware');
 /*
  | For up-to-date information about the options:
@@ -16,7 +15,7 @@ module.exports = {
   port: 8000,
   server: {
     middleware: [
-      // log({ format: '%date %status %method %url' }),
+      //log({ format: '%date %status %method %url' }),
       proxy('/', { target: 'http://localhost:3000' }),
     ]
   }
