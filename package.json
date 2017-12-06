@@ -31,6 +31,6 @@
     "gulp-babel": "^7.0.0",
     "gulp-nodemon": "^2.2.1",
     "http-proxy-middleware": "^0.17.4",
-    "nodemon": "^1.12.1"
+    "nodemon": "^1.12.5"
   }
 }
