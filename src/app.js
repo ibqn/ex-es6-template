@@ -1,4 +1,5 @@
 import express from 'express'
+import nconf from 'nconf'
 import path from 'path'
 import favicon from 'serve-favicon'
 import logger from 'morgan'
@@ -9,7 +10,12 @@ import sassMiddleware from 'node-sass-middleware'
 import index from './routes/index'
 import users from './routes/users'
 
-const app = express()
+
+export const app = express()
+
+export const conf = nconf.argv().env().file({
+  file: path.join(__dirname, 'config.json')
+})
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'))
@@ -50,5 +56,3 @@ app.use(async (err, req, res, /* next */) => {
   res.status(err.status || 500)
   res.render('error')
 })
-
-export default app
